@@ -38,8 +38,26 @@ body {
 /* 공통 클래스 */
 .inner {
   position: relative;
-  width: 128rem;
+  max-width: 1280px;
   margin: 0 auto;
+}
+
+@media screen and (max-width: 1280px) {
+  .inner {
+    max-width: 1024px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .inner {
+    max-width: 760px;
+  }
+}
+
+@media screen and (max-width: 760px) {
+  .inner {
+    max-width: 100%;
+  }
 }
 
 .clearfix::after {
@@ -278,6 +296,7 @@ body {
 
 .header-right {
   float: right;
+  position: relative;
 }
 
 .member-list {
@@ -354,6 +373,13 @@ body {
   font-weight: 700;
 }
 
+.mb-mypage {
+  position: absolute;
+  right: 20px;
+  top: -5px;
+  display: none;
+}
+
 .header-down {
 }
 
@@ -413,6 +439,62 @@ body {
   width: 1px;
   height: 16px;
   background: rgba(0, 0, 0, 0.2);
+}
+
+@media screen and (max-width: 1024px) {
+  .header {
+    border-bottom: 8px solid #f0f4f4;
+  }
+  .header .inner {
+    padding-top: 15px;
+    height: 230px;
+  }
+  .header-left {
+    width: 100%;
+  }
+  .search {
+    left: 50%;
+    transform: translateX(-50%);
+    top: 140px;
+  }
+  .logo {
+    width: 77px;
+    height: 18px;
+    margin-left: 15px;
+  }
+  .member-list {
+    display: none;
+  }
+  .header-down {
+    text-align: center;
+  }
+  .service-list {
+    display: inline-block;
+    float: none;
+    margin-top: 0px;
+  }
+  .service-list li {
+    padding-right: 20px;
+  }
+  .service-list li:last-child {
+    margin-right: 0;
+  }
+  .service-list li a {
+    font-size: 12px;
+    font-weight: 400;
+  }
+  .service-list li a img {
+    display: block;
+    margin: 0 auto;
+    width: 48px;
+    height: 48px;
+  }
+  .service-menu {
+    display: none;
+  }
+  .mb-mypage {
+    display: block;
+  }
 }
 
 /* 추천 이벤트 */
