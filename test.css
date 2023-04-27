@@ -43,7 +43,10 @@ body {
 @media screen and (max-width: 1024px) {
   .inner {
     padding: 0 20px;
+    padding-bottom: 20px;
+
     max-width: 760px;
+    border-bottom: 8px solid #f0f4f4;
   }
 }
 
@@ -100,7 +103,11 @@ body {
 .sw-prev::before {
   transform: scaleX(-100%);
 }
-
+@media screen and (max-width: 1024px) {
+  .sw-bt {
+    display: none;
+  }
+}
 /* section 내용 구조 */
 
 .wrap > section {
@@ -554,7 +561,6 @@ body {
 
 @media screen and (max-width: 1024px) {
   .header {
-    border-bottom: 8px solid #f0f4f4;
   }
   .header .inner {
     padding-top: 15px;
@@ -658,7 +664,6 @@ body {
   }
   .promotion .inner {
     height: 300px;
-    border-bottom: 8px solid #f0f4f4;
   }
   .promotion .section-top {
     display: block;
@@ -826,7 +831,7 @@ body {
 }
 
 .tour .section-slide {
-  height: 355px;
+  /* height: 355px; */
 }
 .sw-tour {
   height: 100%;
