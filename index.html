@@ -1305,6 +1305,10 @@
                     slidesPerView: 5,
                     slidesPerGroup: 5,
                     spaceBetween: 27,
+                    grid: {
+                      rows: 1,
+                      fill: "row",
+                    },
                   },
                 },
               });
@@ -1353,8 +1357,13 @@
             </div>
             <script>
               new Swiper(".sw-events", {
-                slidesPerView: 4,
+                slidesPerView: 3,
                 spaceBetween: 27,
+                breakpoints: {
+                  1280: {
+                    slidesPerView: 4,
+                  },
+                },
               });
             </script>
           </div>
