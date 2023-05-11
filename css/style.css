@@ -84,6 +84,10 @@ body {
   cursor: pointer;
 }
 
+.sw-bt.swiper-button-disabled {
+  display: none;
+}
+
 .sw-next {
   position: absolute;
   top: 50%;
@@ -266,6 +270,7 @@ body {
   box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.16);
   font-size: 0;
   margin-top: 10px;
+  cursor: pointer;
 }
 
 /* 퀵메뉴 */
@@ -354,6 +359,7 @@ body {
 
 /* 상단 */
 .header {
+  position: relative;
   border-bottom: 1px solid rgba(0, 0, 0, 0.08);
   z-index: 999999;
 }
@@ -380,6 +386,7 @@ body {
   background: url("../images/logo.svg") no-repeat center;
   background-size: contain;
 }
+
 .search {
   position: absolute;
   top: 0;
@@ -456,12 +463,18 @@ body {
   margin-left: 5px;
 }
 
+.mypage-bt {
+  padding-bottom: 10px;
+}
+
 .mypage-bt:hover .mypage {
-  display: block;
+  opacity: 1;
+  visibility: visible;
 }
 
 .mypage {
-  display: none;
+  display: block;
+  visibility: hidden;
   position: absolute;
   top: 20px;
   right: 0;
@@ -469,6 +482,8 @@ body {
   padding: 20px;
   border-radius: 13px;
   box-shadow: 0 0 1.6rem rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  transition: all 0s;
 }
 
 .mypage-list {
