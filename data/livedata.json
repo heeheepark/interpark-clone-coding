@@ -1,5 +1,5 @@
 {
-  "live_count": 4,
+  "live_count": 6,
   "live_1": {
     "link": "#",
     "pic": "live1.jpg",
@@ -53,6 +53,34 @@
     "thumbImg": "",
     "thumbAlt": "",
     "descTitle": "",
+    "ratio": 0,
+    "price": ""
+  },
+  "live_5": {
+    "link": "#",
+    "pic": "live5.jpg",
+    "alt": "라이브",
+    "category": "방송예정",
+    "title": "[괌 에어텔] 힐튼 타시오션뷰 60만원대~ /퀴즈+구매왕+구매인증 이벤트!",
+    "date": "05월 23일 (화)",
+    "time": "11:00",
+    "thumbImg": "live5-1.png",
+    "thumbAlt": "인터파크다",
+    "descTitle": "80일간의 세계일주 프로모션",
+    "ratio": 0,
+    "price": ""
+  },
+  "live_6": {
+    "link": "#",
+    "pic": "live6.png",
+    "alt": "라이브",
+    "category": "방송예정",
+    "title": "[수요아트살롱] 순천만 국제 정원 박람회",
+    "date": "05월 24일 (수)",
+    "time": "17:00",
+    "thumbImg": "live6-1.jpg",
+    "thumbAlt": "수요아트살롱",
+    "descTitle": "수요아트살롱이란?",
     "ratio": 0,
     "price": ""
   }

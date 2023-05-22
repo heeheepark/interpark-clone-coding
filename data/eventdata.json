@@ -1,0 +1,9 @@
+{
+  "event_count": 6,
+  "event_1": { "link": "#", "pic": "banner1.jpg", "alt": "이벤트" },
+  "event_2": { "link": "#", "pic": "banner2.jpg", "alt": "이벤트" },
+  "event_3": { "link": "#", "pic": "banner3.jpg", "alt": "이벤트" },
+  "event_4": { "link": "#", "pic": "banner4.jpg", "alt": "이벤트" },
+  "event_5": { "link": "#", "pic": "banner1.jpg", "alt": "이벤트" },
+  "event_6": { "link": "#", "pic": "banner2.jpg", "alt": "이벤트" }
+}
