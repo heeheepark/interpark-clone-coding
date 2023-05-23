@@ -112,27 +112,4 @@ window.addEventListener("load", function () {
       },
     });
   }
-
-  // const btns = document.querySelectorAll(".ticket .btns a");
-  // let cateName = [
-  //   "뮤지컬",
-  //   "콘서트",
-  //   "연극",
-  //   "클래식/무용",
-  //   "스포츠",
-  //   "레저/캠핑",
-  //   "전시/행사",
-  //   "아동/가족",
-  // ];
-  // for (let i = 0; i < cateName.length; i++) {
-  //   btns[i].onclick = function (event) {
-  //     event.preventDefault();
-  //     parseTicket(cateName[i]);
-  //     for (let j = 0; j < cateName.length; j++) {
-  //       btns[j].classList.remove("btns-active");
-  //       this.classList.add("btns-active");
-  //     }
-  //   };
-  // }
-  // btns[0].classList.add("btns-active");
 });

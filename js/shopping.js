@@ -115,22 +115,4 @@ window.addEventListener("load", function () {
       },
     });
   }
-
-  // 버튼 클릭 시 카테고리 변경
-  // 대상이 1개인 경우는 querySelector
-  // 대상이 여러개이면 querySelectorAll
-  const btns = document.querySelectorAll(".shopping .btns a");
-  let cateName = ["쎈딜", "베스트", "오늘만특가", "어린이날"];
-  for (let i = 0; i < cateName.length; i++) {
-    btns[i].onclick = function (event) {
-      // a 태그의 기본 동작인 href를 막는다.
-      event.preventDefault();
-      parseShopping(cateName[i]);
-      for (let j = 0; j < cateName.length; j++) {
-        btns[j].classList.remove("btns-active");
-        this.classList.add("btns-active");
-      }
-    };
-  }
-  btns[0].classList.add("btns-active");
 });
