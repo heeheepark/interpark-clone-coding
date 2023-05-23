@@ -1,0 +1,256 @@
+{
+  "shopping": [
+    {
+      "catename": "쎈딜",
+      "list": [
+        {
+          "link": "#",
+          "pic": "ssendil1.jpg",
+          "product": "제라 라곰 폴딩 캠핑체어 캠핑의자 옥스포드 원단",
+          "ratio": 20,
+          "price": "19,900"
+        },
+        {
+          "link": "#",
+          "pic": "ssendil2.jpg",
+          "product": "켈로그 프링글스 슈퍼핫 할라피뇨파퍼 110g 4개+4개 초특가/감자칩/간식/스낵/포카칩/감자/과자/감자스낵",
+          "ratio": 63,
+          "price": "9,800"
+        },
+        {
+          "link": "#",
+          "pic": "ssendil3.jpg",
+          "product": "엡손 L3256 무한잉크 무선 복합기 프린터 잉크포함",
+          "ratio": 3,
+          "price": "169,000"
+        },
+        {
+          "link": "#",
+          "pic": "ssendil4.jpg",
+          "product": "[앱1천+출국전뷰티30%] 헤드앤숄더 가려운두피/쿨멘솔 샴푸 외 850ml 3개 + 미니샴푸 1개증정",
+          "ratio": 30,
+          "price": "21,980"
+        },
+        {
+          "link": "#",
+          "pic": "ssendil5.jpg",
+          "product": "씨그램 라벨프리 450ml 20입(레몬/라임/플레인/피치)",
+          "ratio": 22,
+          "price": "11,020"
+        },
+        {
+          "link": "#",
+          "pic": "ssendil6.jpg",
+          "product": "이블랑 시어서커/인견100%/피그먼트 여름침구!",
+          "ratio": 28,
+          "price": "8,900"
+        }
+      ]
+    },
+    {
+      "catename": "베스트",
+      "list": 
+    },
+    {
+      "catename": "오늘만특가"
+    },
+    {
+      "catename": "어린이날"
+    },
+    {
+      "catename": "소담상회"
+    }
+  ],
+  "tour": [],
+  "ticket": [],
+  "books": [
+    {
+      "catename": "MD's Pick",
+      "list": [
+        {
+          "link": "#",
+          "img": "bookpick1.jpg",
+          "alt": "pick",
+          "title": "문해력 잡는 스터디매거진 국어킹 1년(50회) 정기구독",
+          "price": "141,750"
+        },
+        {
+          "link": "#",
+          "img": "bookpick2.jpg",
+          "alt": "pick",
+          "title": "스트레이키즈 앨범 정규 3집 파이브 스타 5 STAR 일반반 [3종세트]",
+          "price": "53,400"
+        },
+        {
+          "link": "#",
+          "img": "bookpick3.jpg",
+          "alt": "pick",
+          "title": "앳스타일 6월호 - 표지 불타는 트롯맨 / 부록 없음",
+          "price": "5,310"
+        },
+        {
+          "link": "#",
+          "img": "bookpick4.jpg",
+          "alt": "pick",
+          "title": "스즈메의 문단속 1년 후 나에게: Q & A a day 365 [양장]",
+          "price": "17,820"
+        },
+        {
+          "link": "#",
+          "img": "bookpick5.jpg",
+          "alt": "pick",
+          "title": "Go Go 카카오프렌즈 28: 태국",
+          "price": "13,320"
+        },
+        {
+          "link": "#",
+          "img": "bookpick6.jpg",
+          "alt": "pick",
+          "title": "눈부신 안부",
+          "price": "14,400"
+        }
+      ]
+    },
+    {
+      "catename": "베스트셀러",
+      "list": [
+        {
+          "link": "#",
+          "img": "bookbest1.jpg",
+          "alt": "bookbest",
+          "title": "세이노의 가르침",
+          "price": "6,480"
+        },
+        {
+          "link": "#",
+          "img": "bookbest2.jpg",
+          "alt": "bookbest",
+          "title": "모든 삶은 흐른다",
+          "price": "15,120"
+        },
+        {
+          "link": "#",
+          "img": "bookbest3.jpg",
+          "alt": "bookbest",
+          "title": "돈의 속성(300쇄 리커버에디션)",
+          "price": "16,020"
+        },
+        {
+          "link": "#",
+          "img": "bookbest4.jpg",
+          "alt": "bookbest",
+          "title": "사장학개론",
+          "price": "22,500"
+        },
+        {
+          "link": "#",
+          "img": "bookbest5.jpg",
+          "alt": "bookbest",
+          "title": "별일은 없고요?",
+          "price": "13,320"
+        },
+        {
+          "link": "#",
+          "img": "bookbest6.jpg",
+          "alt": "bookbest",
+          "title": "유연함의 힘",
+          "price": "19,800"
+        }
+      ]
+    },
+    {
+      "catename": "신간추천",
+      "list": [
+        {
+          "link": "#",
+          "img": "booknew1.jpg",
+          "alt": "booknew",
+          "title": "하하 자매 떡집",
+          "price": "6,480"
+        },
+        {
+          "link": "#",
+          "img": "booknew2.jpg",
+          "alt": "booknew",
+          "title": "딸아, 돈 공부 절대 미루지 마라",
+          "price": "15,120"
+        },
+        {
+          "link": "#",
+          "img": "booknew3.jpg",
+          "alt": "booknew",
+          "title": "태양 왕 수바: 수박의 전설",
+          "price": "16,020"
+        },
+        {
+          "link": "#",
+          "img": "booknew4.jpg",
+          "alt": "booknew",
+          "title": "별일은 없고요?",
+          "price": "22,500"
+        },
+        {
+          "link": "#",
+          "img": "booknew5.jpg",
+          "alt": "booknew",
+          "title": "유연함의 힘",
+          "price": "13,320"
+        },
+        {
+          "link": "#",
+          "img": "booknew6.jpg",
+          "alt": "booknew",
+          "title": "형사 박미옥",
+          "price": "19,800"
+        }
+      ]
+    },
+    {
+      "catename": "특가할인",
+      "list": [
+        {
+          "link": "#",
+          "img": "bookspe1.jpg",
+          "alt": "bookspe",
+          "title": "뽀로로 응가 사운드북: 나타났다 뿌직 똥",
+          "price": "11,200"
+        },
+        {
+          "link": "#",
+          "img": "bookspe2.jpg",
+          "alt": "bookspe",
+          "title": "흔한남매 유튜브 연습장",
+          "price": "4,000"
+        },
+        {
+          "link": "#",
+          "img": "bookspe3.jpg",
+          "alt": "bookspe",
+          "title": "덧셈부터 나눗셈까지 쉽게 배울 수 있는 셈이 술술 주산셈 실전설",
+          "price": "6,500"
+        },
+        {
+          "link": "#",
+          "img": "bookspe4.jpg",
+          "alt": "bookspe",
+          "title": "뽀로로 바나나차차 율동 사운드북",
+          "price": "11,200"
+        },
+        {
+          "link": "#",
+          "img": "bookspe5.jpg",
+          "alt": "bookspe",
+          "title": "콩순이 첫 낱말 카드 120",
+          "price": "9,000"
+        },
+        {
+          "link": "#",
+          "img": "bookspe6.jpg",
+          "alt": "bookspe",
+          "title": "오려도 오려도 끝판왕 진짜! 마트 오리기",
+          "price": "12,400"
+        }
+      ]
+    }
+  ]
+}

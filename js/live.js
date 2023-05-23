@@ -9,7 +9,7 @@ window.addEventListener("load", function () {
       makeLiveSlide();
     }
   };
-  liveXhttp.open("GET", "../data/livedata.json");
+  liveXhttp.open("GET", "data/livedata.json");
   liveXhttp.send();
 
   function makeLiveSlide() {

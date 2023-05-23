@@ -1,83 +1,63 @@
 {
-  "ticket_count": 8,
+  "ticket_count": 6,
   "ticket_1": {
-    "link": "#",
-    "pic": "musical1.gif",
-    "alt": "티켓1",
+    "link": "#exhibition",
+    "pic": "exhibition01.gif",
+    "alt": "전시행사1",
     "rank": "1",
-    "title": "뮤지컬 〈영웅〉 - 블루스퀘어",
-    "hall": "블루스퀘어 신한카드홀",
-    "date": "2023.03.17 - 2023.05.21",
-    "sale": "단독판매"
-  },
-  "ticket_2": {
-    "link": "#",
-    "pic": "musical2.gif",
-    "alt": "티켓2",
-    "rank": "2",
-    "title": "뮤지컬 〈베토벤; Beethoven Secret〉 SEASON 2",
-    "hall": "세종문화회관 대극장",
-    "date": "2023.04.14 ~2023.05.15",
+    "title": "에드워드 호퍼: 길 위에서",
+    "hall": "서울시립미술관 서소문본관 전 층",
+    "date": "2023.04.20 - 2023.08.20",
     "sale": ""
   },
-  "ticket_3": {
-    "link": "#",
-    "pic": "musical3.gif",
-    "alt": "티켓3",
-    "rank": "3",
-    "title": "뮤지컬 〈해적〉",
-    "hall": "서경대학교 공연예술센터 스콘1관",
-    "date": "2023.03.07 ~2023.06.11",
+  "ticket_2": {
+    "link": "#exhibition",
+    "pic": "exhibition02.gif",
+    "alt": "전시행사2",
+    "rank": "2",
+    "title": "［얼리버드］ 백희나 그림책전",
+    "hall": "예술의전당 한가람디자인미술관",
+    "date": "2023.06.22 - 2023.07.30",
     "sale": "단독판매"
+  },
+  "ticket_3": {
+    "link": "#exhibition",
+    "pic": "exhibition03.gif",
+    "alt": "전시행사3",
+    "rank": "3",
+    "title": "［HYBE INSIGHT］The Daydream Believers : 꿈, 마침내",
+    "hall": "리드빌딩",
+    "date": "2023.06.09 - 2023.08.27",
+    "sale": ""
   },
   "ticket_4": {
-    "link": "#",
-    "pic": "musical4.gif",
-    "alt": "티켓4",
+    "link": "#exhibition",
+    "pic": "exhibition04.gif",
+    "alt": "전시행사4",
     "rank": "4",
-    "title": "뮤지컬 〈맘마미아!〉",
-    "hall": "충무아트센터 대극장",
-    "date": "2023.03.24 ~2023.06.25",
-    "sale": "단독판매"
+    "title": "거장의 시선, 사람을 향하다 - 영국 내셔널갤러리 명화전",
+    "hall": "국립중앙박물관 기획전시실",
+    "date": "2023.06.02 - 2023.10.09",
+    "sale": ""
   },
   "ticket_5": {
-    "link": "#",
-    "pic": "musical5.gif",
-    "alt": "티켓5",
+    "link": "#exhibition",
+    "pic": "exhibition05.gif",
+    "alt": "전시행사5",
     "rank": "5",
-    "title": "뮤지컬 〈시카고〉 25주년 기념 오리지널 내한",
-    "hall": "블루스퀘어 신한카드홀",
-    "date": "2023.05.27 ~ 2023.08.06",
+    "title": "(순천)박람회 입장권-보통권(일반)/단체권(20인이상)",
+    "hall": "2023 순천만국제정원박람회",
+    "date": "2023.04.01 - 2023.10.31",
     "sale": "단독판매"
   },
   "ticket_6": {
-    "link": "#",
-    "pic": "musical6.gif",
-    "alt": "티켓6",
+    "link": "#exhibition",
+    "pic": "exhibition06.gif",
+    "alt": "전시행사6",
     "rank": "6",
-    "title": "뮤지컬 〈빠리빵집〉",
-    "hall": "세종문화회관 S씨어터",
-    "date": "2023.05.13 ~ 2023.06.25",
-    "sale": "단독판매"
-  },
-  "ticket_7": {
-    "link": "#",
-    "pic": "musical3.gif",
-    "alt": "티켓7",
-    "rank": "7",
-    "title": "뮤지컬 〈영웅〉 - 블루스퀘어",
-    "hall": "블루스퀘어 신한카드홀",
-    "date": "2023.03.17 - 2023.05.21",
-    "sale": "단독판매"
-  },
-  "ticket_8": {
-    "link": "#",
-    "pic": "musical4.gif",
-    "alt": "티켓8",
-    "rank": "8",
-    "title": "뮤지컬 〈영웅〉 - 블루스퀘어",
-    "hall": "블루스퀘어 신한카드홀",
-    "date": "2023.03.17 - 2023.05.21",
-    "sale": "단독판매"
+    "title": "［얼리버드］문도 멘도: 판타스틱 시티 라이프",
+    "hall": "그라운드시소 서촌",
+    "date": "2023.06.30 - 2023.12.03",
+    "sale": ""
   }
 }

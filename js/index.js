@@ -29,7 +29,7 @@ window.onload = function () {
       makePromotionSlide();
     }
   };
-  xhttp.open("GET", "../data/prodata.json");
+  xhttp.open("GET", "data/prodata.json");
   xhttp.send();
 
   function makePromotionSlide() {

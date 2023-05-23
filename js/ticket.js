@@ -19,21 +19,21 @@ window.addEventListener("load", function () {
 
   function parseTicket(_menu) {
     if (_menu === "뮤지컬") {
-      xhr.open("GET", "../data/ticketdata.json");
+      xhr.open("GET", "data/ticketdata.json");
     } else if (_menu === "콘서트") {
-      xhr.open("GET", "../data/ticketdata2.json");
+      xhr.open("GET", "data/ticketdata1.json");
     } else if (_menu === "연극") {
-      xhr.open("GET", "../data/ticketdata3.json");
+      xhr.open("GET", "data/ticketdata2.json");
     } else if (_menu === "클래식/무용") {
-      xhr.open("GET", "../data/ticketdata4.json");
+      xhr.open("GET", "data/ticketdata3.json");
     } else if (_menu === "스포츠") {
-      xhr.open("GET", "../data/ticketdata5.json");
+      xhr.open("GET", "data/ticketdata4.json");
     } else if (_menu === "레저/캠핑") {
-      xhr.open("GET", "../data/ticketdata6.json");
+      xhr.open("GET", "data/ticketdata5.json");
     } else if (_menu === "전시/행사") {
-      xhr.open("GET", "../data/ticketdata7.json");
+      xhr.open("GET", "data/ticketdata6.json");
     } else if (_menu === "아동/가족") {
-      xhr.open("GET", "../data/ticketdata8.json");
+      xhr.open("GET", "data/ticketdata7.json");
     }
     xhr.send();
   }
@@ -106,37 +106,20 @@ window.addEventListener("load", function () {
   }
 
   const btns = document.querySelectorAll(".ticket .btns a");
-
-  btns[0].onclick = function (event) {
-    event.preventDefault();
-    parseTicket("뮤지컬");
-  };
-  btns[1].onclick = function (event) {
-    event.preventDefault();
-    parseTicket("콘서트");
-  };
-  btns[2].onclick = function (event) {
-    event.preventDefault();
-    parseTicket("연극");
-  };
-  btns[3].onclick = function (event) {
-    event.preventDefault();
-    parseTicket("클래식/무용");
-  };
-  btns[4].onclick = function (event) {
-    event.preventDefault();
-    parseTicket("스포츠");
-  };
-  btns[5].onclick = function (event) {
-    event.preventDefault();
-    parseTicket("레저/캠핑");
-  };
-  btns[6].onclick = function (event) {
-    event.preventDefault();
-    parseTicket("전시/행사");
-  };
-  btns[7].onclick = function (event) {
-    event.preventDefault();
-    parseTicket("아동/가족");
-  };
+  let cateName = [
+    "뮤지컬",
+    "콘서트",
+    "연극",
+    "클래식/무용",
+    "스포츠",
+    "레저/캠핑",
+    "전시/행사",
+    "아동/가족",
+  ];
+  for (let i = 0; i < cateName.length; i++) {
+    btns[i].onclick = function (event) {
+      event.preventDefault();
+      parseTicket(cateName[i]);
+    };
+  }
 });
