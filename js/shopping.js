@@ -13,34 +13,48 @@ window.addEventListener("load", function () {
     const req = event.target;
     if (req.readyState === XMLHttpRequest.DONE) {
       let data = JSON.parse(req.response);
-      makeShoppingSlide(data);
+      parseShopping(data);
     }
   };
+  xhr.open("GET", "data/books.json");
+  xhr.send();
 
+  let jsonData;
   // 메뉴를 클릭 했을 때 목록 slide 변경
-  function parseShopping(_menu) {
-    // 전달된 매개변수 _menu에 따라서 관련된 json 데이터를 불러들이고,
-    if (_menu === "쎈딜") {
-      xhr.open("GET", "data/shoppingdata.json");
-    } else if (_menu === "베스트") {
-      xhr.open("GET", "data/shoppingdata1.json");
-    } else if (_menu === "오늘만특가") {
-      xhr.open("GET", "data/shoppingdata2.json");
-    } else if (_menu === "어린이날") {
-      xhr.open("GET", "data/shoppingdata3.json");
+  function parseShopping(_data) {
+    let cateBtns = document.querySelector(".shopping .btns");
+    jsonData = _data;
+    let btHtml = ``;
+    let dataArr = _data.shopping;
+    for (let i = 0; i < dataArr.length; i++) {
+      let temp = `<a href="#">${dataArr[i].catename}</a>`;
+      btHtml += temp;
     }
-    xhr.send();
-    // html을 만들어서 slide를 만들어준다.
-  }
-  parseShopping("쎈딜");
+    cateBtns.innerHTML = btHtml;
 
-  // swiper 슬라이더는 만들기 전에 삭제하자.
+    let aTags = document.querySelectorAll(".shopping .btns a");
+    for (let i = 0; i < dataArr.length - 1; i++) {
+      aTags[i].onclick = function (event) {
+        event.preventDefault();
+        makeShoppingSlide(i);
+        for (j = 0; j < dataArr.length; j++) {
+          aTags[j].classList.remove("btns-active");
+          this.classList.add("btns-active");
+        }
+      };
+      aTags[0].classList.add("btns-active");
+    }
+    makeShoppingSlide(0);
+  }
+
   let shoppingSwiper;
 
-  function makeShoppingSlide(_data) {
+  function makeShoppingSlide(_idx) {
     let swShoppingHtml = ``;
-    for (let i = 0; i < _data.good_count; i++) {
-      let obj = _data[`good_${i + 1}`];
+    let listData = jsonData.shopping[_idx].list;
+    let listTotal = listData.length;
+    for (let i = 0; i < listTotal; i++) {
+      let obj = listData[i];
       let temp = `
         <div class="swiper-slide">
           <a href="${obj.link}" class="good">
@@ -112,10 +126,11 @@ window.addEventListener("load", function () {
       // a 태그의 기본 동작인 href를 막는다.
       event.preventDefault();
       parseShopping(cateName[i]);
-      for (let j = 0; i < cateName.length; j++) {
+      for (let j = 0; j < cateName.length; j++) {
         btns[j].classList.remove("btns-active");
         this.classList.add("btns-active");
       }
     };
   }
+  btns[0].classList.add("btns-active");
 });

@@ -33,7 +33,12 @@ window.addEventListener("load", function () {
       aTags[i].onclick = function (event) {
         event.preventDefault();
         makeList(i);
+        for (let j = 0; j < dataArr.length; j++) {
+          aTags[j].classList.remove("btns-active");
+          this.classList.add("btns-active");
+        }
       };
+      aTags[0].classList.add("btns-active");
     }
     makeList(0);
   }

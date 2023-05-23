@@ -9,36 +9,54 @@
 window.addEventListener("load", function () {
   // tour Swiper
   // tour 데이터 파싱 및 슬라이드 제작
-  function parseTour(_cate) {
-    const tourXhttp = new XMLHttpRequest();
-    tourXhttp.onreadystatechange = function (event) {
-      const req = event.target;
-      if (req.readyState === XMLHttpRequest.DONE) {
-        let data = JSON.parse(req.response);
-        makeTourSlide(data);
-      }
-    };
 
-    if (_cate === "망설이면 품절") {
-      tourXhttp.open("GET", "data/tourdata.json");
-    } else if (_cate === "패키지") {
-      tourXhttp.open("GET", "data/tourdata1.json");
-    } else if (_cate === "국내숙소") {
-      tourXhttp.open("GET", "data/tourdata2.json");
-    } else if (_cate === "해외숙소") {
-      tourXhttp.open("GET", "data/tourdata3.json");
+  const tourXhttp = new XMLHttpRequest();
+  tourXhttp.onreadystatechange = function (event) {
+    const req = event.target;
+    if (req.readyState === XMLHttpRequest.DONE) {
+      let data = JSON.parse(req.response);
+      parseTour(data);
     }
+  };
+  tourXhttp.open("GET", "data/books.json");
+  tourXhttp.send();
 
-    tourXhttp.send();
+  // 목록 리스트 만들기
+  let jsonData;
+  let cateBtns = document.querySelector(".tour .btns");
+  function parseTour(_data) {
+    jsonData = _data;
+    let btHtml = ``;
+    let dataArr = _data.tour;
+    for (let i = 0; i < dataArr.length; i++) {
+      let temp = `<a href="#">${dataArr[i].catename}</a>`;
+      btHtml += temp;
+    }
+    cateBtns.innerHTML = btHtml;
+
+    let aTags = document.querySelectorAll(".tour .btns a");
+    for (let i = 0; i < dataArr.length; i++) {
+      aTags[i].onclick = function (event) {
+        event.preventDefault();
+        makeTourSlide(i);
+        for (let j = 0; j < dataArr.length; j++) {
+          aTags[j].classList.remove("btns-active");
+          this.classList.add("btns-active");
+        }
+      };
+    }
+    aTags[0].classList.add("btns-active");
+    makeTourSlide(0);
   }
-  parseTour("망설이면 품절");
 
   let tourSwiper;
 
-  function makeTourSlide(_data) {
+  function makeTourSlide(_idx) {
     let swTourHtml = ``;
-    for (let i = 0; i < _data.tour_count; i++) {
-      let obj = _data[`tour_${i + 1}`];
+    let listData = jsonData.tour[_idx].list;
+    let listTotal = listData.length;
+    for (let i = 0; i < listTotal; i++) {
+      let obj = listData[i];
       let temp = `
       <div class="swiper-slide">
         <a href="${obj.link}" class="tour-link">
@@ -108,17 +126,6 @@ window.addEventListener("load", function () {
           },
         },
       },
-    });
-  }
-
-  const btns = document.querySelectorAll(".tour .btns a");
-  let cateName = ["망설이면 품절", "패키지", "국내숙소", "해외숙소"];
-  for (let i = 0; i < cateName.length; i++) {
-    btns[i].addEventListener("click", function (event) {
-      event.preventDefault();
-      parseTour(cateName[i]);
-      // 포커스 적용
-      this.classList.add("btns-active");
     });
   }
 });
