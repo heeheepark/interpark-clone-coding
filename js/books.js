@@ -29,18 +29,16 @@ window.addEventListener("load", function () {
     btns.innerHTML = btHtml;
 
     let aTags = document.querySelectorAll(".books .btns a");
-    for (let i = 0; i < dataArr.length; i++) {
-      aTags[i].onclick = function (event) {
+    aTags.forEach((item, index) => {
+      item.addEventListener("click", function (event) {
         event.preventDefault();
-        makeList(i);
-        for (let j = 0; j < dataArr.length; j++) {
-          aTags[j].classList.remove("btns-active");
-          this.classList.add("btns-active");
-        }
-      };
+        makeList(index);
+        aTags.forEach((item) => item.classList.remove("btns-active"));
+        this.classList.add("btns-active");
+      });
       aTags[0].classList.add("btns-active");
-    }
-    makeList(0);
+      makeList(0);
+    });
   }
 
   // 목록 html 만들기

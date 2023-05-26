@@ -32,18 +32,28 @@ window.addEventListener("load", function () {
     cateBtns.innerHTML = btHtml;
 
     let aTags = document.querySelectorAll(".ticket .btns a");
-    for (let i = 0; i < dataArr.length; i++) {
-      aTags[i].onclick = function (event) {
+    aTags.forEach((item, index) => {
+      item.addEventListener("click", function (event) {
         event.preventDefault();
-        makeTicketSlide(i);
-        for (j = 0; j < dataArr.length; j++) {
-          aTags[j].classList.remove("btns-active");
-          this.classList.add("btns-active");
-        }
-      };
+        makeTicketSlide(index);
+        aTags.forEach((item) => item.classList.remove("btns-active"));
+        this.classList.add("btns-active");
+      });
       aTags[0].classList.add("btns-active");
-    }
-    makeTicketSlide(0);
+      makeTicketSlide(0);
+    });
+    // for (let i = 0; i < dataArr.length; i++) {
+    //   aTags[i].onclick = function (event) {
+    //     event.preventDefault();
+    //     makeTicketSlide(i);
+    //     for (j = 0; j < dataArr.length; j++) {
+    //       aTags[j].classList.remove("btns-active");
+    //       this.classList.add("btns-active");
+    //     }
+    //   };
+    //   aTags[0].classList.add("btns-active");
+    // }
+    // makeTicketSlide(0);
   }
 
   let ticketSwiper;

@@ -33,18 +33,16 @@ window.addEventListener("load", function () {
     cateBtns.innerHTML = btHtml;
 
     let aTags = document.querySelectorAll(".shopping .btns a");
-    for (let i = 0; i < dataArr.length - 1; i++) {
-      aTags[i].onclick = function (event) {
+    aTags.forEach((item, index) => {
+      item.addEventListener("click", function (event) {
         event.preventDefault();
-        makeShoppingSlide(i);
-        for (j = 0; j < dataArr.length; j++) {
-          aTags[j].classList.remove("btns-active");
-          this.classList.add("btns-active");
-        }
-      };
+        makeShoppingSlide(index);
+        aTags.forEach((item) => item.classList.remove("btns-active"));
+        this.classList.add("btns-active");
+      });
       aTags[0].classList.add("btns-active");
-    }
-    makeShoppingSlide(0);
+      makeShoppingSlide(0);
+    });
   }
 
   let shoppingSwiper;

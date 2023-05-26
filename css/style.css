@@ -63,7 +63,8 @@ body {
   display: flex;
   flex-flow: column nowrap;
   justify-content: space-between;
-  padding: 30px;
+  padding: 10px 30px 50px;
+  border: none;
 }
 .closeBtn {
   cursor: pointer;
@@ -78,14 +79,17 @@ body {
 }
 .text-area {
   font-size: 18px;
-  margin-bottom: 20px;
 }
 .fix-text {
-  height: 180px;
+  font-size: 25px;
+  margin-bottom: 60px;
 }
 .notice {
   font-size: 20px;
   line-height: 30px;
+}
+.notice p:last-child {
+  margin-top: 10px;
 }
 .notice em {
   font-weight: 700;
