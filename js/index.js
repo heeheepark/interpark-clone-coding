@@ -1,19 +1,32 @@
 window.onload = function () {
   // 모달창 처리
-  let body = document.querySelector("body");
-  body.classList.add("modal-active");
-  let modal = document.querySelector(".modal");
-  modal.onclick = function () {
-    body.classList.remove("modal-active");
-    this.style.display = "none";
+  let body = document.querySelector('body');
+  let modal = document.querySelector('.modal');
+  const modalClose = document.querySelector('.modal-cont .closeBtn');
+  body.classList.add('modal-active');
+  modalClose.onclick = function () {
+    body.classList.remove('modal-active');
+    modal.style.display = 'none';
   };
 
+  // 모달창 아이콘
+  const icon = document.querySelectorAll('.icon');
+  const iconInfo = document.querySelectorAll('.icon-info');
+  icon.forEach((item, index) => {
+    item.addEventListener('mouseenter', function () {
+      iconInfo[index].style.display = 'block';
+    });
+    item.addEventListener('mouseleave', function () {
+      iconInfo[index].style.display = 'none';
+    });
+  });
+
   // 위로 이동하기
-  const goTopBtn = document.querySelector(".gotop");
-  goTopBtn.addEventListener("click", function () {
+  const goTopBtn = document.querySelector('.gotop');
+  goTopBtn.addEventListener('click', function () {
     window.scrollTo({
       top: 0,
-      behavior: "smooth",
+      behavior: 'smooth',
     });
   });
 
@@ -38,7 +51,7 @@ window.onload = function () {
       makePromotionSlide();
     }
   };
-  xhttp.open("GET", "data/prodata.json");
+  xhttp.open('GET', 'data/prodata.json');
   xhttp.send();
 
   function makePromotionSlide() {
@@ -56,12 +69,10 @@ window.onload = function () {
       swPromotionHtml += html;
     }
     // 위의 백틱 내용을 넣어줄 장소를 저장
-    let swPromotionWrapper = document.querySelector(
-      ".sw-promotion .swiper-wrapper"
-    );
+    let swPromotionWrapper = document.querySelector('.sw-promotion .swiper-wrapper');
     swPromotionWrapper.innerHTML = swPromotionHtml;
 
-    let promotionSwiper = new Swiper(".sw-promotion", {
+    let promotionSwiper = new Swiper('.sw-promotion', {
       slidesPerView: 1,
       spaceBetween: 24,
       speed: 1000,
@@ -71,11 +82,11 @@ window.onload = function () {
         disableOnInteraction: false,
       },
       navigation: {
-        nextEl: ".promotion .sw-next",
-        prevEl: ".promotion .sw-prev",
+        nextEl: '.promotion .sw-next',
+        prevEl: '.promotion .sw-prev',
       },
       pagination: {
-        el: ".sw-promotion-pg",
+        el: '.sw-promotion-pg',
         clickable: true,
       },
       breakpoints: {

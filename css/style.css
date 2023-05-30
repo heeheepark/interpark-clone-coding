@@ -1,5 +1,5 @@
 @charset "utf-8";
-@import url("font.css");
+@import url('font.css');
 
 * {
   margin: 0;
@@ -27,13 +27,14 @@ html {
 }
 
 body {
-  font-family: "Pretendard", sans-serif;
+  font-family: 'Pretendard', sans-serif;
   font-size: 1.3rem;
   line-height: 1;
   color: #000;
   letter-spacing: -0.64px;
   word-break: keep-all;
 }
+
 /* 클론코드 안내창 */
 .modal {
   position: fixed;
@@ -59,11 +60,12 @@ body {
 }
 .modal .inner {
   position: relative;
+  width: 100%;
   height: 100%;
   display: flex;
   flex-flow: column nowrap;
   justify-content: space-between;
-  padding: 10px 30px 50px;
+  padding: 20px 30px 30px;
   border: none;
 }
 .closeBtn {
@@ -82,7 +84,31 @@ body {
 }
 .fix-text {
   font-size: 25px;
-  margin-bottom: 60px;
+  margin-bottom: 30px;
+}
+.fix-text > span {
+  display: inline-block;
+  margin-bottom: 20px;
+}
+.fix-cont {
+  height: 90px;
+  color: #6c6c6c;
+  font-size: 15px;
+  line-height: 20px;
+  text-align: start;
+  overflow: scroll;
+  background: #ededed;
+  padding: 10px;
+}
+.fix-cont::-webkit-scrollbar {
+  display: none;
+}
+.fix-cont > p > em {
+  font-weight: 600;
+}
+.fix-cont > span {
+  display: inline-block;
+  margin-bottom: 12px;
 }
 .notice {
   font-size: 20px;
@@ -99,7 +125,11 @@ body {
   justify-content: center;
   align-items: center;
 }
-.icon-area a {
+.icon-area .icon {
+  position: relative;
+}
+.icon-area .icon a {
+  display: inline-block;
   width: 45px;
   height: 45px;
   border: 1px solid #ddd;
@@ -109,14 +139,40 @@ body {
   line-height: 42px;
   margin-right: 15px;
 }
-.icon-area a img {
-  width: 35px;
+.icon-area .icon a img {
+  width: 30px;
   background: #fff;
 }
-.icon-area a span {
+.icon-area .icon a > span {
   display: block;
   line-height: 43px;
   font-size: 35px;
+}
+.icon-area .icon > span {
+  display: none;
+  width: 90px;
+  background: #979797;
+  color: #fff;
+  position: absolute;
+  top: 54px;
+  left: -22px;
+  padding: 2px;
+  border-radius: 3px;
+  white-space: nowrap;
+  font-size: 12px;
+}
+.icon-area .icon > span::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border: 5px solid transparent;
+  border-bottom-color: #979797;
+  border-top: 0;
+  margin-left: -5px;
+  margin-top: -5px;
 }
 
 /* 공통 클래스 */
@@ -151,7 +207,7 @@ body {
 .clearfix::after {
   display: block;
   position: relative;
-  content: "";
+  content: '';
   width: 100%;
   clear: both;
 }
@@ -193,10 +249,10 @@ body {
   position: absolute;
   top: calc(50% - 8px);
   left: calc(50% - 4px);
-  content: "";
+  content: '';
   width: 8px;
   height: 16px;
-  background: url("../images/slider_arrow.svg") no-repeat center;
+  background: url('../images/slider_arrow.svg') no-repeat center;
 }
 
 .sw-prev::before {
@@ -276,11 +332,11 @@ body {
 .bt-link-shop::after {
   display: inline-block;
   position: relative;
-  content: "";
+  content: '';
   margin-left: 3px;
   width: 7px;
   height: 11px;
-  background: url("../images/icon_linkArrow.svg") no-repeat center;
+  background: url('../images/icon_linkArrow.svg') no-repeat center;
 }
 
 @media screen and (max-width: 1280px) {
@@ -350,7 +406,7 @@ body {
   height: 38px;
   border-radius: 50%;
   border: 1px solid rgba(0, 0, 0, 0.15);
-  background: #fff url("../images/btn_topArrow.svg") no-repeat center;
+  background: #fff url('../images/btn_topArrow.svg') no-repeat center;
   box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.16);
   font-size: 0;
   margin-top: 10px;
@@ -467,7 +523,7 @@ body {
   left: 0;
   width: 118px;
   height: 50px;
-  background: url("../images/logo.svg") no-repeat center;
+  background: url('../images/logo.svg') no-repeat center;
   background-size: contain;
 }
 
@@ -491,7 +547,7 @@ body {
   font-weight: 400;
 }
 .search-text::placeholder {
-  font-family: "Pretendard";
+  font-family: 'Pretendard';
   font-size: 15px;
   font-weight: 700;
   color: #a2a2a2;
@@ -500,7 +556,7 @@ body {
   width: 18px;
   height: 18px;
   border: none;
-  background: url("../images/btn_search.svg") no-repeat center;
+  background: url('../images/btn_search.svg') no-repeat center;
   cursor: pointer;
   vertical-align: -3px;
 }
@@ -513,7 +569,7 @@ body {
   cursor: pointer;
   width: 16px;
   height: 16px;
-  background: url("../images/btn_searchDelete.svg") no-repeat center;
+  background: url('../images/btn_searchDelete.svg') no-repeat center;
 }
 .header-right {
   position: relative;
@@ -539,10 +595,10 @@ body {
 .icon-arrow::after {
   display: inline-block;
   position: relative;
-  content: "";
+  content: '';
   width: 8px;
   height: 5px;
-  background: url("../images/arrow_pc.svg") no-repeat center;
+  background: url('../images/arrow_pc.svg') no-repeat center;
   vertical-align: 3px;
   margin-left: 5px;
 }
@@ -656,7 +712,7 @@ body {
   position: absolute;
   top: calc(50% - 16px / 2);
   left: 0;
-  content: "";
+  content: '';
   width: 1px;
   height: 16px;
   background: rgba(0, 0, 0, 0.2);
@@ -1015,6 +1071,12 @@ body {
   }
   .tour-place {
     font-size: 14px;
+    height: 28px;
+    overflow: hidden;
+    display: -webkit-box;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
   }
   .tour-price {
     font-size: 15px;
@@ -1071,11 +1133,10 @@ body {
   position: absolute;
   top: 0;
   left: 0;
-  content: "";
+  content: '';
   width: 100%;
   height: 100%;
-  background: linear-gradient(0deg, rgba(0, 0, 0, 0.04), rgba(0, 0, 0, 0.04)),
-    linear-gradient(180deg, transparent 68.5%, rgba(0, 0, 0, 0.6));
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.04), rgba(0, 0, 0, 0.04)), linear-gradient(180deg, transparent 68.5%, rgba(0, 0, 0, 0.6));
 }
 .ticket-info {
   padding: 20px 10px;
@@ -1541,7 +1602,7 @@ body {
   position: absolute;
   top: 2px;
   right: -36px;
-  content: "";
+  content: '';
   width: 1px;
   height: 12px;
   background: rgba(0, 0, 0, 0.3);
@@ -1561,10 +1622,10 @@ body {
 .footer-menu-list > li > a > i::before {
   display: inline-block;
   position: relative;
-  content: "";
+  content: '';
   width: 8px;
   height: 6px;
-  background: url("../images/icon_arrow.svg") no-repeat center;
+  background: url('../images/icon_arrow.svg') no-repeat center;
   margin-left: 4px;
   vertical-align: 2px;
 }
@@ -1631,7 +1692,7 @@ body {
 .company-info li span.f-line::after {
   display: inline-block;
   position: relative;
-  content: "";
+  content: '';
   width: 1px;
   height: 10px;
   background: #b2b2b2;
@@ -1686,7 +1747,7 @@ body {
   font-weight: 700;
 }
 .a-line::before {
-  content: "";
+  content: '';
   position: absolute;
   right: 0;
   top: 0;
@@ -1696,14 +1757,14 @@ body {
   background: #afafaf;
 }
 .a-more::after {
-  content: "";
+  content: '';
   position: absolute;
   right: -5px;
   top: 2px;
   display: inline-block;
   width: 10px;
   height: 10px;
-  background: url("../images/footer_arrow.svg") no-repeat center;
+  background: url('../images/footer_arrow.svg') no-repeat center;
 }
 .footer-mobile-info .a-line::before {
   right: -12px;
