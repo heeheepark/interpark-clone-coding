@@ -6,23 +6,16 @@
  * 업데이트: 쇼핑몰 리스트 목록 출력 함수화 작업
  */
 
-window.addEventListener("load", function () {
-  // Shopping Swiper
-  let xhr = new XMLHttpRequest();
-  xhr.onreadystatechange = function (event) {
-    const req = event.target;
-    if (req.readyState === XMLHttpRequest.DONE) {
-      let data = JSON.parse(req.response);
-      parseShopping(data);
-    }
-  };
-  xhr.open("GET", "data/books.json");
-  xhr.send();
+window.addEventListener('load', function () {
+  this.fetch('data/books.json')
+    .then((res) => res.json())
+    .then((result) => parseShopping(result))
+    .catch((err) => console.log(err));
 
   let jsonData;
   // 메뉴를 클릭 했을 때 목록 slide 변경
   function parseShopping(_data) {
-    let cateBtns = document.querySelector(".shopping .btns");
+    let cateBtns = document.querySelector('.shopping .btns');
     jsonData = _data;
     let btHtml = ``;
     let dataArr = _data.shopping;
@@ -32,15 +25,15 @@ window.addEventListener("load", function () {
     }
     cateBtns.innerHTML = btHtml;
 
-    let aTags = document.querySelectorAll(".shopping .btns a");
+    let aTags = document.querySelectorAll('.shopping .btns a');
     aTags.forEach((item, index) => {
-      item.addEventListener("click", function (event) {
+      item.addEventListener('click', function (event) {
         event.preventDefault();
         makeShoppingSlide(index);
-        aTags.forEach((item) => item.classList.remove("btns-active"));
-        this.classList.add("btns-active");
+        aTags.forEach((item) => item.classList.remove('btns-active'));
+        this.classList.add('btns-active');
       });
-      aTags[0].classList.add("btns-active");
+      aTags[0].classList.add('btns-active');
       makeShoppingSlide(0);
     });
   }
@@ -70,9 +63,7 @@ window.addEventListener("load", function () {
       swShoppingHtml += temp;
     }
 
-    let swShoppingWrpper = document.querySelector(
-      ".sw-shopping .swiper-wrapper"
-    );
+    let swShoppingWrpper = document.querySelector('.sw-shopping .swiper-wrapper');
     swShoppingWrpper.innerHTML = swShoppingHtml;
 
     // 새로 생성전에 swiper API를 이용해서 삭제한다.
@@ -80,16 +71,16 @@ window.addEventListener("load", function () {
       shoppingSwiper.destroy();
     }
 
-    shoppingSwiper = new Swiper(".sw-shopping", {
+    shoppingSwiper = new Swiper('.sw-shopping', {
       slidesPerView: 5,
       grid: {
         rows: 2,
-        fill: "row",
+        fill: 'row',
       },
       spaceBetween: 10,
       navigation: {
-        nextEl: ".shopping .sw-next",
-        prevEl: ".shopping .sw-prev",
+        nextEl: '.shopping .sw-next',
+        prevEl: '.shopping .sw-prev',
       },
       breakpoints: {
         1024: {

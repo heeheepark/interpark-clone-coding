@@ -1,21 +1,15 @@
-window.addEventListener("load", function () {
+window.addEventListener('load', function () {
   // live Swiper
-  let liveData;
-  let liveXhttp = new XMLHttpRequest();
-  liveXhttp.onreadystatechange = function (event) {
-    const req = event.target;
-    if (req.readyState === XMLHttpRequest.DONE) {
-      liveData = JSON.parse(req.response);
-      makeLiveSlide();
-    }
-  };
-  liveXhttp.open("GET", "data/livedata.json");
-  liveXhttp.send();
 
-  function makeLiveSlide() {
+  this.fetch('data/livedata.json')
+    .then((res) => res.json())
+    .then((result) => makeLiveSlide(result))
+    .catch((err) => console.log(err));
+
+  function makeLiveSlide(_result) {
     let swLiveHtml = ``;
-    for (i = 0; i < liveData.live_count; i++) {
-      let obj = liveData[`live_${i + 1}`];
+    for (i = 0; i < _result.live_count; i++) {
+      let obj = _result[`live_${i + 1}`];
       let temp = `
         <div class="swiper-slide">
           <a href="${obj.link}" class="live-link">
@@ -32,24 +26,14 @@ window.addEventListener("load", function () {
                 <p class="live-info-time">${obj.time}</p>
               </div>
               <div class="live-info-bottom clearfix">
-                <div class="live-info-thumb" ${
-                  obj.thumbImg
-                    ? "style='display:block'"
-                    : "style='display:none'"
-                }>
+                <div class="live-info-thumb" ${obj.thumbImg ? "style='display:block'" : "style='display:none'"}>
                   <img src="images/${obj.thumbImg}" alt="${obj.thumbAlt}" />
                 </div>
-                <div class="live-info-desc" ${
-                  obj.descTitle
-                    ? "style='display:block'"
-                    : "style='display:none'"
-                }>
+                <div class="live-info-desc" ${obj.descTitle ? "style='display:block'" : "style='display:none'"}>
                   <p class="live-info-desc-title">
                     ${obj.descTitle}
                   </p>
-                  <p class="live-info-desc-price" ${
-                    obj.ratio ? "style='display:block'" : "style='display:none'"
-                  }>
+                  <p class="live-info-desc-price" ${obj.ratio ? "style='display:block'" : "style='display:none'"}>
                     <em>${obj.ratio}%</em><b>${obj.price}</b>원
                   </p>
                 </div>
@@ -60,15 +44,15 @@ window.addEventListener("load", function () {
       swLiveHtml += temp;
     }
 
-    let swLiveWrapper = document.querySelector(".sw-live .swiper-wrapper");
+    let swLiveWrapper = document.querySelector('.sw-live .swiper-wrapper');
     swLiveWrapper.innerHTML = swLiveHtml;
 
-    let liveSwiper = new Swiper(".sw-live", {
+    let liveSwiper = new Swiper('.sw-live', {
       slidesPerView: 4,
       spaceBetween: 10,
       navigation: {
-        nextEl: ".live .sw-next",
-        prevEl: ".live .sw-prev",
+        nextEl: '.live .sw-next',
+        prevEl: '.live .sw-prev',
       },
       breakpoints: {
         1024: {

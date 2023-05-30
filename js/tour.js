@@ -6,24 +6,15 @@
  * 업데이트: 투어 리스트 목록 출력 함수화 작업
  */
 
-window.addEventListener("load", function () {
-  // tour Swiper
-  // tour 데이터 파싱 및 슬라이드 제작
-
-  const tourXhttp = new XMLHttpRequest();
-  tourXhttp.onreadystatechange = function (event) {
-    const req = event.target;
-    if (req.readyState === XMLHttpRequest.DONE) {
-      let data = JSON.parse(req.response);
-      parseTour(data);
-    }
-  };
-  tourXhttp.open("GET", "data/books.json");
-  tourXhttp.send();
+window.addEventListener('load', function () {
+  this.fetch('data/books.json')
+    .then((res) => res.json())
+    .then((result) => parseTour(result))
+    .catch((err) => console.log(err));
 
   // 목록 리스트 만들기
   let jsonData;
-  let cateBtns = document.querySelector(".tour .btns");
+  let cateBtns = document.querySelector('.tour .btns');
   function parseTour(_data) {
     jsonData = _data;
     let btHtml = ``;
@@ -36,15 +27,15 @@ window.addEventListener("load", function () {
 
     let tourSwiper;
 
-    let aTags = document.querySelectorAll(".tour .btns a");
+    let aTags = document.querySelectorAll('.tour .btns a');
     aTags.forEach((item, index) => {
-      item.addEventListener("click", function (event) {
+      item.addEventListener('click', function (event) {
         event.preventDefault();
         makeTourSlide(index);
-        aTags.forEach((item) => item.classList.remove("btns-active"));
-        this.classList.add("btns-active");
+        aTags.forEach((item) => item.classList.remove('btns-active'));
+        this.classList.add('btns-active');
       });
-      aTags[0].classList.add("btns-active");
+      aTags[0].classList.add('btns-active');
       makeTourSlide(0);
     });
 
@@ -63,9 +54,7 @@ window.addEventListener("load", function () {
           </div>
           <div class="tour-info">
             <ul class="tour-info-list">
-              <li ${
-                obj.category ? "style='display:block'" : "style='display:none'"
-              }>
+              <li ${obj.category ? "style='display:block'" : "style='display:none'"}>
                 <span class="tour-cate">${obj.category}</span>
               </li>
               <li>
@@ -86,23 +75,23 @@ window.addEventListener("load", function () {
         swTourHtml += temp;
       }
 
-      let swTourWrapper = document.querySelector(".sw-tour .swiper-wrapper");
+      let swTourWrapper = document.querySelector('.sw-tour .swiper-wrapper');
       swTourWrapper.innerHTML = swTourHtml;
 
       if (tourSwiper) {
         tourSwiper.destroy();
       }
 
-      tourSwiper = new Swiper(".sw-tour", {
+      tourSwiper = new Swiper('.sw-tour', {
         slidesPerView: 3,
         grid: {
           rows: 2,
-          fill: "row",
+          fill: 'row',
         },
         spaceBetween: 10,
         navigation: {
-          nextEl: ".tour .sw-next",
-          prevEl: ".tour .sw-prev",
+          nextEl: '.tour .sw-next',
+          prevEl: '.tour .sw-prev',
         },
         breakpoints: {
           1024: {

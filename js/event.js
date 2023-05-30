@@ -1,21 +1,15 @@
-window.addEventListener("load", function () {
+window.addEventListener('load', function () {
   // event Swiper
-  let eventData;
-  let eventXhttp = new XMLHttpRequest();
-  eventXhttp.onreadystatechange = function (event) {
-    const req = event.target;
-    if (req.readyState === XMLHttpRequest.DONE) {
-      eventData = JSON.parse(req.response);
-      makeEventSlide();
-    }
-  };
-  eventXhttp.open("GET", "../data/eventdata.json");
-  eventXhttp.send();
 
-  function makeEventSlide() {
+  this.fetch('data/eventdata.json')
+    .then((res) => res.json())
+    .then((result) => makeEventSlide(result))
+    .catch((err) => console.log(err));
+
+  function makeEventSlide(_result) {
     let swEventHtml = ``;
-    for (let i = 0; i < eventData.event_count; i++) {
-      let obj = eventData[`event_${i + 1}`];
+    for (let i = 0; i < _result.event_count; i++) {
+      let obj = _result[`event_${i + 1}`];
       let temp = `
         <div class="swiper-slide">
           <a href="${obj.link}" class="events-link">
@@ -25,15 +19,15 @@ window.addEventListener("load", function () {
       swEventHtml += temp;
     }
 
-    let swEventWrapper = document.querySelector(".sw-events .swiper-wrapper");
+    let swEventWrapper = document.querySelector('.sw-events .swiper-wrapper');
     swEventWrapper.innerHTML = swEventHtml;
 
-    let eventSwipder = new Swiper(".sw-events", {
+    let eventSwipder = new Swiper('.sw-events', {
       slidesPerView: 3,
       spaceBetween: 27,
       navigation: {
-        nextEl: ".event .sw-next",
-        prevEl: ".event .sw-prev",
+        nextEl: '.event .sw-next',
+        prevEl: '.event .sw-prev',
       },
       breakpoints: {
         1280: {

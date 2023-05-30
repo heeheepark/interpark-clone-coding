@@ -6,21 +6,15 @@
  * 업데이트: 티켓 리스트 목록 출력 함수화 작업
  */
 
-window.addEventListener("load", function () {
+window.addEventListener('load', function () {
   // ticket Swiper
-  const xhr = new XMLHttpRequest();
-  xhr.onreadystatechange = function (event) {
-    const req = event.target;
-    if (req.readyState === XMLHttpRequest.DONE) {
-      let data = JSON.parse(req.response);
-      parseTicket(data);
-    }
-  };
-  xhr.open("GET", "data/books.json");
-  xhr.send();
+  this.fetch('data/books.json')
+    .then((res) => res.json())
+    .then((result) => parseTicket(result))
+    .catch((err) => console.log(err));
 
   let jsonData;
-  let cateBtns = document.querySelector(".ticket .btns");
+  let cateBtns = document.querySelector('.ticket .btns');
   function parseTicket(_data) {
     jsonData = _data;
     let btHtml = ``;
@@ -31,15 +25,15 @@ window.addEventListener("load", function () {
     }
     cateBtns.innerHTML = btHtml;
 
-    let aTags = document.querySelectorAll(".ticket .btns a");
+    let aTags = document.querySelectorAll('.ticket .btns a');
     aTags.forEach((item, index) => {
-      item.addEventListener("click", function (event) {
+      item.addEventListener('click', function (event) {
         event.preventDefault();
         makeTicketSlide(index);
-        aTags.forEach((item) => item.classList.remove("btns-active"));
-        this.classList.add("btns-active");
+        aTags.forEach((item) => item.classList.remove('btns-active'));
+        this.classList.add('btns-active');
       });
-      aTags[0].classList.add("btns-active");
+      aTags[0].classList.add('btns-active');
       makeTicketSlide(0);
     });
     // for (let i = 0; i < dataArr.length; i++) {
@@ -84,9 +78,7 @@ window.addEventListener("load", function () {
                     >${obj.date}</span
                   >
                 </li>
-                <li ${
-                  obj.sale ? "style='display:block'" : "style='display:none'"
-                }>
+                <li ${obj.sale ? "style='display:block'" : "style='display:none'"}>
                   <span class="ticket-sale">${obj.sale}</span>
                 </li>
               </ul>
@@ -96,19 +88,19 @@ window.addEventListener("load", function () {
       swTicketHtml += temp;
     }
 
-    let swTicketWrapper = document.querySelector(".sw-ticket .swiper-wrapper");
+    let swTicketWrapper = document.querySelector('.sw-ticket .swiper-wrapper');
     swTicketWrapper.innerHTML = swTicketHtml;
 
     if (ticketSwiper) {
       ticketSwiper.destroy();
     }
 
-    ticketSwiper = new Swiper(".sw-ticket", {
-      slidesPerView: "auto",
+    ticketSwiper = new Swiper('.sw-ticket', {
+      slidesPerView: 'auto',
       spaceBetween: 10,
       navigation: {
-        nextEl: ".ticket .sw-next",
-        prevEl: ".ticket .sw-prev",
+        nextEl: '.ticket .sw-next',
+        prevEl: '.ticket .sw-prev',
       },
       breakpoints: {
         1024: {

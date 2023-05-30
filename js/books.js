@@ -1,22 +1,16 @@
-window.addEventListener("load", function () {
+window.addEventListener('load', function () {
   // 선택된 출력 리스트 인덱스
   let showIndex = 0;
 
-  let xhr = new XMLHttpRequest();
-  xhr.onreadystatechange = function (event) {
-    let req = event.target;
-    if (req.readyState === XMLHttpRequest.DONE) {
-      let data = JSON.parse(req.response);
-      parseBooks(data);
-    }
-  };
-  xhr.open("GET", "data/books.json");
-  xhr.send();
+  this.fetch('data/books.json')
+    .then((res) => res.json())
+    .then((result) => parseBooks(result))
+    .catch((err) => console.log(err));
 
   //json Data 보관
   let jsonData;
   // 버튼들
-  let btns = document.querySelector(".books .btns");
+  let btns = document.querySelector('.books .btns');
   function parseBooks(_data) {
     jsonData = _data;
     // a 태그 만들기
@@ -28,15 +22,15 @@ window.addEventListener("load", function () {
     }
     btns.innerHTML = btHtml;
 
-    let aTags = document.querySelectorAll(".books .btns a");
+    let aTags = document.querySelectorAll('.books .btns a');
     aTags.forEach((item, index) => {
-      item.addEventListener("click", function (event) {
+      item.addEventListener('click', function (event) {
         event.preventDefault();
         makeList(index);
-        aTags.forEach((item) => item.classList.remove("btns-active"));
-        this.classList.add("btns-active");
+        aTags.forEach((item) => item.classList.remove('btns-active'));
+        this.classList.add('btns-active');
       });
-      aTags[0].classList.add("btns-active");
+      aTags[0].classList.add('btns-active');
       makeList(0);
     });
   }
@@ -65,23 +59,23 @@ window.addEventListener("load", function () {
     `;
       html += temp;
     }
-    let swWrap = document.querySelector(".sw-books .swiper-wrapper");
+    let swWrap = document.querySelector('.sw-books .swiper-wrapper');
     swWrap.innerHTML = html;
 
     if (booksSwiper) {
       booksSwiper.destroy();
     }
 
-    booksSwiper = new Swiper(".sw-books", {
+    booksSwiper = new Swiper('.sw-books', {
       slidesPerView: 3,
       grid: {
         rows: 4,
-        fill: "row",
+        fill: 'row',
       },
       spaceBetween: 19,
       navigation: {
-        nextEl: ".books .sw-next",
-        prevEl: ".books .sw-prev",
+        nextEl: '.books .sw-next',
+        prevEl: '.books .sw-prev',
       },
       breakpoints: {
         1024: {
@@ -90,7 +84,7 @@ window.addEventListener("load", function () {
           spaceBetween: 30,
           grid: {
             rows: 1,
-            fill: "row",
+            fill: 'row',
           },
         },
         1280: {
@@ -99,7 +93,7 @@ window.addEventListener("load", function () {
           spaceBetween: 27,
           grid: {
             rows: 1,
-            fill: "row",
+            fill: 'row',
           },
         },
       },
